@@ -77,4 +77,4 @@ class StudentsDetailAddressViews(APIView):
     def get(self,request,pk):
         instances = Students.objects.filter(id=pk)
         serializer = StudentsDetailAddressSerializers(instances,many=True)
-        return Response({"serializer data"})
+        return Response(serializer.data)
